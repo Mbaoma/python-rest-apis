@@ -20,13 +20,31 @@ Provides access to a collection of people and to the individuals within that col
 | Update | PUT | /api/people/<lname> | Update a person's information
 | Delete | DELETE  | /api/people/<lname> | Delete a person's inforrmation
 
-## Setting up CI/CD using  GitHub Actions
-- There is a branch protection rule set for the main branch. 
-- In the  CI pipeline, unless all [tests](https://testdriven.io/blog/flask-pytest/) run successfully, a pull request (PR) cannot be made to the  main branch.
-**Resources**: [Test Routes](https://medium.com/analytics-vidhya/how-to-test-flask-applications-aef12ae5181c)
+## Setting up CI/CD using GitHub Actions
+- There is a branch protection rule set for the main branch - you cannot push directly to the main branch.
+
+- In the  CI pipeline, unless all [tests](https://testdriven.io/blog/flask-pytest/) run successfully, you cannot merge code into the main branch.
+**Resources**: [Test Routes](https://dev.to/po5i/how-to-add-basic-unit-test-to-a-python-flask-app-using-pytest-1m7a)
+
 # Steps to run
 - Activate virtual environment and install dependencies
 ```bash
 $ source virtualenv/bin/activate
 $ pip install requirements.txt
 ```
+
+- Run project
+```bash
+python3 app.py
+```
+
+- Run tests
+```bash
+
+```
+
+Failing Build -> cannot merge into main
+<img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520306-81c5f381-27f2-4569-a198-a6dce7ff8c3b.png">
+
+Passing Build -> can merge into main
+<img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520789-e4d6931c-6506-4d98-92cd-3e98efd6838b.png">
