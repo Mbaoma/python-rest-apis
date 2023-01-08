@@ -17,3 +17,13 @@ paths:
       responses:
         "200":
           description: "Successfully read people list"
+  
+  /home:
+    get:
+      operationId: "home.home"
+      tags:
+        - "Welcome"
+      summary: "Display greeting"
+      responses:
+        "200":
+          description: "Successfully displayed greeting"

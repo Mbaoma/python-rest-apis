@@ -40,7 +40,7 @@ python3 app.py
 
 - Run tests
 ```bash
-
+pytest tests
 ```
 
 Failing Build -> cannot merge into main
@@ -48,3 +48,10 @@ Failing Build -> cannot merge into main
 
 Passing Build -> can merge into main
 <img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520789-e4d6931c-6506-4d98-92cd-3e98efd6838b.png">
+
+### Routes
+- ```GET /api/people```
+<img width="546" alt="image" src="https://user-images.githubusercontent.com/49791498/211180090-e6b105cf-57bb-498b-8998-3b08aea6826e.png">
+
+- ```GET /api/ui```
+<img width="1385" alt="image" src="https://user-images.githubusercontent.com/49791498/211180113-84ed10dd-b073-4114-9e12-dc07abfeba2c.png">
