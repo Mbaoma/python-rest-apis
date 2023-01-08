@@ -38,6 +38,11 @@ $ pip install requirements.txt
 python3 app.py
 ```
 
+- Run tests
+```bash
+
+```
+
 Failing Build -> cannot merge into main
 <img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520306-81c5f381-27f2-4569-a198-a6dce7ff8c3b.png">
 
