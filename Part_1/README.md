@@ -62,4 +62,14 @@ Passing Build -> can merge into main
 - ```GET http://192.168.0.173:8000/api/ui/#/People/people.read_all_people```
 <img width="1376" alt="image" src="https://user-images.githubusercontent.com/49791498/212396243-e19f61c6-169a-46c5-a398-23aa4ba212cc.png">
 
-## API Links
+- ```GET /api/home```
+<img width="788" alt="image" src="https://user-images.githubusercontent.com/49791498/212398020-8f5e859e-d9fb-43cb-a80b-3ef081669775.png">
+
+- ```POST /api/person```
+<img width="826" alt="image" src="https://user-images.githubusercontent.com/49791498/212449224-047dbdac-1e21-4722-8cec-40f4ea50617e.png">
+
+**expected response**
+<img width="826" alt="image" src="https://user-images.githubusercontent.com/49791498/212449250-0b93ab28-1bed-41cc-bc95-3396ec84929e.png">
+
+**error response**
+<img width="712" alt="image" src="https://user-images.githubusercontent.com/49791498/212449812-143a852c-f901-4dbe-a7a0-45fab96ccab3.png">
