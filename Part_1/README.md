@@ -6,7 +6,9 @@ To:
 - Handle HTTP requests with Connexion
 - Define API endpoints using the OpenAPI specification
 - Interact with my API to manage data
-- Build API documentation with Postman
+- Build API documentation with Swagger UI and Connexion
+- Set up Continuous Integration and Continuous Deployment (CI/CD)
+- Extensively test the API endpoints
 
 ## The REST API
 Provides access to a collection of people and to the individuals within that collection.
@@ -73,3 +75,7 @@ Passing Build -> can merge into main
 
 **error response**
 <img width="712" alt="image" src="https://user-images.githubusercontent.com/49791498/212449812-143a852c-f901-4dbe-a7a0-45fab96ccab3.png">
+
+- ```PUT /api/person```
+
+- ```DELETE /api/person```
