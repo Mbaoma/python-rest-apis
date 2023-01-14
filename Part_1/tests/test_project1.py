@@ -11,3 +11,8 @@ def test_people_page_status_code(client):
     route = "/api/people"
     rv = client.get(route)
     assert rv.status_code == 200
+
+def test_create_people_page_status_code(client):
+    route = "/api/people"
+    rv = client.get(route)
+    assert rv.status_code == 201
