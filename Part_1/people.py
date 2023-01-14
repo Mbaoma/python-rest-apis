@@ -6,17 +6,17 @@ def get_timestamp():
 #print(get_timestamp())
 
 PEOPLE = {
-    "Tooth":  {
+    "Fairy":  {
         "fname": "Tooth",
         "lname": "Fairy",
         "timestamp": get_timestamp(),
     },
-    "Santa": {
+    "Claus": {
         "fname": "Santa",
         "lname": "Claus",
         "timestamp": get_timestamp(),
     },
-    "Izuku": {
+    "Midoriya": {
         "fname": "Izuku",
         "lname": "Midoriya",
         "timestamp": get_timestamp(),
@@ -55,7 +55,7 @@ def read_one_person(lname):
         return PEOPLE[lname]
     else:
         abort(
-            404, f"Person with {lname}, does not exist."
+            404, f"Person with last name {lname}, does not exist."
         )
     
 def update_a_person(lname, person):
@@ -65,7 +65,7 @@ def update_a_person(lname, person):
         return PEOPLE[lname]
     else:
         abort(
-            404, f"Person with {lname}, does not exist"
+            404, f"Person with last name {lname}, does not exist"
         )
 
 def delete_user_input(lname):
