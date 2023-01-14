@@ -56,6 +56,46 @@ paths:
       responses:
         "201":
           description: "Successfully created the person"
+
+  /people/{lname}:
+    get:
+      operationId: "people.read_one_person"
+      tags:
+        - People
+      summary: "Read one person"
+      parameters:
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "200":
+          description: "Successfully read the person"
+
+    put:
+      tags:
+        - People
+      operationId: "people.update_a_person"
+      summary: "Update a person"
+      parameters:
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "200":
+          description: "Successfully updated the person"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name:  "person"
+              $ref: "#/components/schemas/Person"
+    
+    delete:
+      tags:
+        - People
+      operationId: "people.delete_user_input"
+      summary: "Delete a person's details"
+      parameters:
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "204":
+          description: "Successfully deleted the user"
   
   /home:
     get:
