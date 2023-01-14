@@ -18,7 +18,6 @@ components:
           type: "string"
         lname:
           type: "string"
-  
   parameters:
     lname:
       name: "lname"
@@ -31,35 +30,32 @@ components:
 paths:
   /people:
     get:
-      operationId: "people.read_all_people"
+      operationId: "people.read_all"
       tags:
         - "People"
       summary: "Read the list of people"
       responses:
         "200":
           description: "Successfully read people list"
-
-    #create a POST method
     post:
-      operationId: "people.create_new_person"
+      operationId: "people.create"
       tags:
-        - "People"
+        - People
       summary: "Create a person"
       requestBody:
-        description: "Person to create"
-        required: True
-        content:
-          application/json:
-            schema:
-              x-body-name: "person"
-              $ref: "#/components/schemas/Person"
+          description: "Person to create"
+          required: True
+          content:
+            application/json:
+              schema:
+                x-body-name: "person"
+                $ref: "#/components/schemas/Person"
       responses:
         "201":
-          description: "Successfully created the person"
-
+          description: "Successfully created person"
   /people/{lname}:
     get:
-      operationId: "people.read_one_person"
+      operationId: "people.read_one"
       tags:
         - People
       summary: "Read one person"
@@ -67,42 +63,30 @@ paths:
         - $ref: "#/components/parameters/lname"
       responses:
         "200":
-          description: "Successfully read the person"
-
+          description: "Successfully read person"
     put:
       tags:
         - People
-      operationId: "people.update_a_person"
+      operationId: "people.update"
       summary: "Update a person"
       parameters:
         - $ref: "#/components/parameters/lname"
       responses:
         "200":
-          description: "Successfully updated the person"
+          description: "Successfully updated person"
       requestBody:
         content:
           application/json:
             schema:
-              x-body-name:  "person"
+              x-body-name: "person"
               $ref: "#/components/schemas/Person"
-    
     delete:
       tags:
         - People
-      operationId: "people.delete_user_input"
-      summary: "Delete a person's details"
+      operationId: "people.delete"
+      summary: "Delete a person"
       parameters:
         - $ref: "#/components/parameters/lname"
       responses:
         "204":
-          description: "Successfully deleted the user"
-  
-  /home:
-    get:
-      operationId: "home.home"
-      tags:
-        - "Welcome"
-      summary: "Display greeting"
-      responses:
-        "200":
-          description: "Successfully displayed greeting"
+          description: "Successfully deleted person"
