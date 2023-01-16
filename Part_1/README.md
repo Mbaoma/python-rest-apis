@@ -28,6 +28,8 @@ Provides access to a collection of people and to the individuals within that col
 - In the  CI pipeline, unless all [tests](https://testdriven.io/blog/flask-pytest/) run successfully, you cannot merge code into the main branch.
 **Resources**: [Test Routes](https://dev.to/po5i/how-to-add-basic-unit-test-to-a-python-flask-app-using-pytest-1m7a)
 
+- Setup [GitHub](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04#setting-up-git) on your VM, as the code will be deployed to an Azure virtual machine.
+
 # Steps to run
 - Activate virtual environment and install dependencies
 ```bash
@@ -52,17 +54,11 @@ Passing Build -> can merge into main
 <img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520789-e4d6931c-6506-4d98-92cd-3e98efd6838b.png">
 
 ### Routes
-- -  ``` GET http://192.168.0.173:8000/```
-<img width="1076" alt="image" src="https://user-images.githubusercontent.com/49791498/212395341-38ed8f55-79cd-4635-b3c0-f9c6c7f9ee9a.png">
-
 - ```GET /api/people```
 <img width="546" alt="image" src="https://user-images.githubusercontent.com/49791498/211180090-e6b105cf-57bb-498b-8998-3b08aea6826e.png">
 
 - ```GET /api/ui```
 <img width="1385" alt="image" src="https://user-images.githubusercontent.com/49791498/211180113-84ed10dd-b073-4114-9e12-dc07abfeba2c.png">
-
-- ```GET http://192.168.0.173:8000/api/ui/#/People/people.read_all_people```
-<img width="1376" alt="image" src="https://user-images.githubusercontent.com/49791498/212396243-e19f61c6-169a-46c5-a398-23aa4ba212cc.png">
 
 - ```GET /api/home```
 <img width="788" alt="image" src="https://user-images.githubusercontent.com/49791498/212398020-8f5e859e-d9fb-43cb-a80b-3ef081669775.png">
@@ -77,5 +73,11 @@ Passing Build -> can merge into main
 <img width="712" alt="image" src="https://user-images.githubusercontent.com/49791498/212449812-143a852c-f901-4dbe-a7a0-45fab96ccab3.png">
 
 - ```PUT /api/person```
+<img width="1358" alt="image" src="https://user-images.githubusercontent.com/49791498/212667394-d4f158cb-805a-4293-81ee-7478324ac714.png">
+
+<img width="1323" alt="image" src="https://user-images.githubusercontent.com/49791498/212667500-18fc3ea2-500c-43ec-8d6f-24cf07d159db.png">
 
 - ```DELETE /api/person```
+<img width="1348" alt="image" src="https://user-images.githubusercontent.com/49791498/212667715-ef17261f-340c-44b0-9da8-da1cc884cc81.png">
+
+<img width="1340" alt="image" src="https://user-images.githubusercontent.com/49791498/212667794-49645424-1563-4db4-9240-2798bdeb55d4.png">
