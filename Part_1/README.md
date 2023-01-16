@@ -28,7 +28,7 @@ Provides access to a collection of people and to the individuals within that col
 - In the  CI pipeline, unless all [tests](https://testdriven.io/blog/flask-pytest/) run successfully, you cannot merge code into the main branch.
 **Resources**: [Test Routes](https://dev.to/po5i/how-to-add-basic-unit-test-to-a-python-flask-app-using-pytest-1m7a)
 
-- Setup [GitHub](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04#setting-up-git) on your VM, as the code will be deployed to an Azure virtual machine.
+- Setup a Virtual machine and install [GitHub](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04#setting-up-git).
 
 - In the Azure CLI, create a service principal
 ```bash
@@ -37,7 +37,7 @@ az ad sp create-for-rbac --name "<name>" --role contributor --scopes <path to re
 
 Upon running the above command, a JSON response will be generated. Add this response to your GitHub secrets with the name ```AZURE_CREDENTIALS```.
 
-# Steps to run
+## Steps to run
 - Activate virtual environment and install dependencies
 ```bash
 $ source virtualenv/bin/activate
