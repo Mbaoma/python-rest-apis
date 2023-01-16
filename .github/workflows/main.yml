@@ -44,6 +44,12 @@ jobs:
     environment:
       name: 'Development'
     steps:
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Checkout source code
       - uses: actions/checkout@v3
 
       - name:  Deploy to Azure VM
@@ -53,7 +59,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: |
-            cd Part_1
-            git pull origin main
+          script: git clone https://github.com/Mbaoma/python-rest-apis.git
 

@@ -30,6 +30,13 @@ Provides access to a collection of people and to the individuals within that col
 
 - Setup [GitHub](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04#setting-up-git) on your VM, as the code will be deployed to an Azure virtual machine.
 
+- In the Azure CLI, create a service principal
+```bash
+az ad sp create-for-rbac --name "<name>" --role contributor --scopes <path to resource group> --sdk-auth /subscriptions/f8db0501-e2fe-49e4-abfa-e70745b53732/resourceGroups/ci-cd-practice
+```bash```
+
+Upon running the above command, a JSON response will be generated. Add this response to your GitHub secrets with the name ```AZURE_CREDENTIALS```.
+
 # Steps to run
 - Activate virtual environment and install dependencies
 ```bash
