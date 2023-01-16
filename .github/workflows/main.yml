@@ -60,7 +60,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            git clone https://github.com/Mbaoma/python-rest-apis.git
+            
             cd python-rest-apis/Part_1
             git pull origin main
 
