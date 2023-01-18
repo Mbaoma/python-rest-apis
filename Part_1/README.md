@@ -32,7 +32,7 @@ Provides access to a collection of people and to the individuals within that col
 
 - In the Azure CLI, create a service principal
 ```bash
-az ad sp create-for-rbac --name "<name>" --role contributor --scopes <path to resource group> --sdk-auth /subscriptions/f8db0501-e2fe-49e4-abfa-e70745b53732/resourceGroups/ci-cd-practice
+az ad sp create-for-rbac --name "<name>" --role contributor --scopes <path to resource group> --sdk-auth 
 ```bash```
 
 Upon running the above command, a JSON response will be generated. Add this response to your GitHub secrets with the name ```AZURE_CREDENTIALS```.
