@@ -22,6 +22,11 @@ jobs:
         with:
           python-version:  3.11.1
 
+      - name: Install Nginx
+        run: |
+          sudo apt update -y
+          sudo apt install nginx -y
+
       - name: Install Dependencies
         run: |
           cd Part_1
@@ -48,11 +53,6 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
       
-      - name: Install Nginx
-        run: |
-          sudo apt update -y
-          sudo apt install nginx -y
-
       - name:  Deploy to Azure VM
         uses: appleboy/ssh-action@v0.1.7
         with:
@@ -61,9 +61,17 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
+            sudo service nginx stop
+            rm -r apis/Part_1
+            git clone https://github.com/Mbaoma/python-rest-apis.git
+            sudo mv python-rest-apis apis
             cd apis/Part_1
             git pull origin main
-            sudo systemctl reload nginx
+            sudo systemctl daemon-reload
+            sudo systemctl enable app
+            sudo systemctl start app
+            sudo service nginx start
+            
       
       
     
