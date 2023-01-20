@@ -62,7 +62,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             sudo service nginx stop
-            rm -r apis/Part_1
+            sudo rm -r apis
             git clone https://github.com/Mbaoma/python-rest-apis.git
             sudo mv python-rest-apis apis
             cd apis/Part_1
