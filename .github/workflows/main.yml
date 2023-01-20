@@ -47,6 +47,11 @@ jobs:
 
       - name: Checkout source code
         uses: actions/checkout@v3
+      
+      - name: Install Nginx
+        run: |
+          sudo apt update -y
+          sudo apt install nginx -y
 
       - name:  Deploy to Azure VM
         uses: appleboy/ssh-action@v0.1.7
@@ -56,8 +61,14 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-      
-            cd python-rest-apis/Part_1
+            cd apis/Part_1
             git pull origin main
+            sudo systemctl reload nginx
+      
+      
+    
+      
+      
+     
 
 

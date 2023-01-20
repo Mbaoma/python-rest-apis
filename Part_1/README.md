@@ -32,31 +32,14 @@ Provides access to a collection of people and to the individuals within that col
 
 - In the Azure CLI, create a service principal
 ```bash
-az ad sp create-for-rbac --name "<name>" --role contributor --scopes <path to resource group> --sdk-auth 
-```bash```
+$ az ad sp create-for-rbac --name "<name>" --role contributor --scopes <path to resource group> --sdk-auth 
+```
 
 Upon running the above command, a JSON response will be generated. Add this response to your GitHub secrets with the name ```AZURE_CREDENTIALS```.
 
 - This [article](https://www.rosehosting.com/blog/how-to-deploy-flask-application-with-nginx-and-gunicorn-on-ubuntu-20-04/) provides a guide for  hosting this application on Nginx.
 
 - Read [me](https://stackoverflow.com/questions/29679963/why-gunicorn-command-not-found-with-gunicorn-installed) fix gunicorn issues.
-
--- In the ``` /etc/systemd/system/flask.service```file, add
-```bash
-[Unit]
-Description=Gunicorn to serve Flask App
-After=network.target
-
-[Service]
-User=azureuser
-Group=www-data
-WorkingDirectory=/home/azureuser/python-rest-apis
-Environment="PATH=/home/azureuser/python-rest-apis/Part_1/virtualenv/bin"
-ExecStart=gunicorn --bind 0.0.0:80 wsgi:app
-
-[Install]
-WantedBy=multi-user.target
-```
 
 ## Steps to run
 - Activate virtual environment and install dependencies
@@ -67,7 +50,7 @@ $ pip install requirements.txt
 
 - Run project
 ```bash
-python3 app.py
+$ python3 run.py OR gunicorn --bind 0.0.0.0:80 run:app
 ```
 
 - Run tests
