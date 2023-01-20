@@ -68,9 +68,9 @@ jobs:
             cd apis/Part_1
             git pull origin main
             sudo systemctl daemon-reload
-            sudo systemctl enable app
-            sudo systemctl start app
-            sudo service nginx start
+            sudo systemctl restart app.service
+            sudo systemctl start nginx
+            sudo systemctl restart nginx
             
       
       
