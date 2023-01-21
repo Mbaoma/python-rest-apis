@@ -64,6 +64,17 @@ Failing Build -> cannot merge into main
 Passing Build -> can merge into main
 <img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520789-e4d6931c-6506-4d98-92cd-3e98efd6838b.png">
 
+### Dockerize the application
+-  Build the image with
+```bash
+docker build --tag <name> .
+```
+
+-  Run image as a container
+```bash
+docker run -d -p <port-in-container>:<application-port> <image-name>
+```
+
 ### Routes
 - ```GET /api/people```
 <img width="546" alt="image" src="https://user-images.githubusercontent.com/49791498/211180090-e6b105cf-57bb-498b-8998-3b08aea6826e.png">
