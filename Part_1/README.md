@@ -50,12 +50,13 @@ $ pip install requirements.txt
 
 - Run project
 ```bash
-$ python3 run.py OR gunicorn --bind 0.0.0.0:80 run:app
+$ cd Part_1
+$ gunicorn --bind 0.0.0.0:80 run:app
 ```
 
 - Run tests
 ```bash
-pytest tests
+$ pytest tests
 ```
 
 Failing Build -> cannot merge into main
@@ -63,17 +64,6 @@ Failing Build -> cannot merge into main
 
 Passing Build -> can merge into main
 <img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520789-e4d6931c-6506-4d98-92cd-3e98efd6838b.png">
-
-### Dockerize the application
--  Build the image with
-```bash
-docker build --tag <name> .
-```
-
--  Run image as a container
-```bash
-docker run -d -p <port-in-container>:<application-port> <image-name>
-```
 
 ### Routes
 - ```GET /api/people```
@@ -103,3 +93,7 @@ docker run -d -p <port-in-container>:<application-port> <image-name>
 <img width="1348" alt="image" src="https://user-images.githubusercontent.com/49791498/212667715-ef17261f-340c-44b0-9da8-da1cc884cc81.png">
 
 <img width="1340" alt="image" src="https://user-images.githubusercontent.com/49791498/212667794-49645424-1563-4db4-9240-2798bdeb55d4.png">
+
+### Deployed Application
+<img width="1258" alt="image" src="https://user-images.githubusercontent.com/49791498/213863870-d04a9bbe-9169-428a-a61a-8431dd048d11.png">
+
