@@ -96,13 +96,3 @@ paths:
       responses:
         "204":
           description: "Successfully deleted the user"
-  
-  /home:
-    get:
-      operationId: "home.home"
-      tags:
-        - "Welcome"
-      summary: "Display greeting"
-      responses:
-        "200":
-          description: "Successfully displayed greeting"
