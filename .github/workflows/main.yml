@@ -29,12 +29,11 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          cd Part_2
           pip3 install -r requirements.txt
           pip3 install "connexion[swagger-ui]"
       
-      # - name: Run tests
-      #   run: python3 -m pytest
+      #- name: Run tests
+        #run: python3 -m pytest
 
 # this job depends on the successful completion of the build job above
 #   deploy:

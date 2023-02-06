@@ -15,6 +15,8 @@ To:
 
 [Tutorial](https://realpython.com/flask-connexion-rest-api/)
 
+<img width="383" alt="image" src="https://user-images.githubusercontent.com/49791498/216837933-16f193bb-316b-4ed3-bc7b-90b524fe5851.png">
+ 
 ## The REST API
 Provides access to a collection of people and to the individuals within that collection.
 

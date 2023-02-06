@@ -27,6 +27,14 @@ components:
       required: True
       schema:
         type: "string"
+    
+    note_id:
+      name: "note_id"
+      description: "Note's ID"
+      in: path
+      required: True
+      schema:
+        type: "integer"
 
 paths:
   /people:
@@ -68,7 +76,7 @@ paths:
       responses:
         "200":
           description: "Successfully read the person"
-
+    
     put:
       tags:
         - People
@@ -97,12 +105,68 @@ paths:
         "204":
           description: "Successfully deleted the user"
   
-  /home:
-    get:
-      operationId: "home.home"
+  /notes:
+    post:
+      operationId: "notes.create"
       tags:
-        - "Welcome"
-      summary: "Display greeting"
+        - Notes
+      summary: "Create a note associated with a person"
+      requestBody:
+          description: "Note to create"
+          required: True
+          content:
+            application/json:
+              schema:
+                x-body-name: "note"
+                type: "object"
+                properties:
+                  person_id:
+                    type: "integer"
+                  content:
+                    type: "string"
+      responses:
+        "201":
+          description: "Successfully created a note"
+
+  /notes/{note_id}:
+    get:
+      operationId: "notes.read_one"
+      tags:
+        - Notes
+      summary: "Read one note"
+      parameters:
+        - $ref: "#/components/parameters/note_id"
       responses:
         "200":
-          description: "Successfully displayed greeting"
+          description: "Successfully read one note"
+    
+    put:
+      tags:
+        - Notes
+      operationId: "notes.update"
+      summary: "Update a note"
+      parameters:
+        - $ref: "#/components/parameters/note_id"
+      responses:
+        "200":
+          description: "Successfully updated note"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: "note"
+              type: "object"
+              properties:
+                content:
+                  type: "string"
+    delete:
+      tags:
+        - Notes
+      operationId: "notes.delete"
+      summary: "Delete a note"
+      parameters:
+        - $ref: "#/components/parameters/note_id"
+      responses:
+        "204":
+          description: "Successfully deleted note"
+    
