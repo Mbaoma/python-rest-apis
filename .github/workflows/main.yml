@@ -21,8 +21,9 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag mbaoma/note_app:$(date +%s)
-      
-    - name: Docker Push
-      run: docker push mbaoma/note_app:$(date +%s)
+      uses: docker/build-push-action@v4
+      with:
+        push: true
+        tags: mbaoma/note-app:latest
