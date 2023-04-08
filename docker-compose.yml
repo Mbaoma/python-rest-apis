@@ -11,7 +11,7 @@ services:
       - default
   
   app:
-    image: mbaoma/flask-api
+    image: mbaoma/note-app
     #build:
       #context: .
       #dockerfile: Dockerfile
