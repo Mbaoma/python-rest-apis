@@ -90,7 +90,14 @@ Passing Build -> can merge into main
 ### Deploying the Application to Azure App Service
 - [GitHub Actions Guide](https://learn.microsoft.com/en-us/azure/app-service/deploy-container-github-action?tabs=publish-profile)
 - [Azure App Service Guide](https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal)
+- Configure your app's settings as follows:
+
+<img width="1310" alt="image" src="https://user-images.githubusercontent.com/49791498/230740471-01619cb9-b4ed-4d93-acf5-77856c668969.png">
+
 - Deployed application
 <image>
+
+**The CI/CD pipeline is triggered on every pull request made to the main branch**.
+
 <!-- <img width="1258" alt="image" src="https://user-images.githubusercontent.com/49791498/213863870-d04a9bbe-9169-428a-a61a-8431dd048d11.png"> -->
 
