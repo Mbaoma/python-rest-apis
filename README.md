@@ -88,11 +88,9 @@ Passing Build -> can merge into main
 - ```DELETE /api/person```
 
 ### Deploying the Application to Azure App Service
-- [GitHub Actions Guide](https://learn.microsoft.com/en-us/azure/app-service/deploy-container-github-action?tabs=publish-profile)
-- [Azure App Service Guide](https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal)
-- Configure your app's settings as follows:
-
-<img width="1310" alt="image" src="https://user-images.githubusercontent.com/49791498/230740471-01619cb9-b4ed-4d93-acf5-77856c668969.png">
+- [Guide](https://learn.microsoft.com/en-us/azure/app-service/deploy-ci-cd-custom-container?tabs=acr&pivots=container-linux)
+<!-- - [GitHub Actions Guide](https://learn.microsoft.com/en-us/azure/app-service/deploy-container-github-action?tabs=publish-profile)
+- [Azure App Service Guide](https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal) -->
 
 - Deployed application
 <image>
