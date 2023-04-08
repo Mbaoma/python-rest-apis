@@ -1,4 +1,4 @@
-name: Build Docker Image
+name: Run tests, update Docker image and deploy to Azure App service
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
 
     - name: Build the Docker image
       uses: docker/build-push-action@v4

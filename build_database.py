@@ -4,35 +4,35 @@ from models import Person, Note
 
 PEOPLE_NOTES = [
     {
-        "lname":"Lu",
-        "fname": "Bu",
+        "lname":"John",
+        "fname": "W",
         "notes": [
-            ("Ga kou", "2023-02-04 14:15"),
-            ("You are so cool", "2023-02-04 14:15"),
+            ("John is an avid reader and enjoys spending his weekends curled up with a good book and a cup of tea", "2023-02-04 14:15"),
+            ("He particularly enjoys science fiction and fantasy novels that transport him to other worlds and immerse him in exciting adventures.", "2023-02-04 14:15" ),
         ],
     },
     {
-        "lname": "Beifong",
-        "fname": "Toph",
+        "lname": "Sarah",
+        "fname": "T",
         "notes": [
-            ("The GOAT", "2023-02-04 14:15"),
-            ("Greatest bender", "2023-02-04 14:15"),
+            ("Sarah is a talented musician and spends most of her free time writing and performing her own songs", "2023-02-04 14:15"),
+            ("She is an avid traveler and has visited over 20 countries in the past five years.", "2023-02-04 14:15"),
         ],
     },
     {
-        "lname": "Hanma",
-        "fname": "Baki",
+        "lname": "Mark",
+        "fname": "B",
         "notes": [
-            ("My hero", "2023-02-04 14:15"),
-            ("I hope you win", "2023-02-04 14:15"),
+            ("Mark is a computer programmer who enjoys learning new coding languages and building websites in his spare time.", "2023-02-04 14:15"),
+            ("Mark has recently started working on a new web application that he hopes to launch in the near future, and he spends most of his evenings and weekends working on it.", "2023-02-04 14:15"),
         ],
     },
     {
-        "lname": "Uzumaki",
-        "fname": "Naruto",
+        "lname": "Emily",
+        "fname": "E",
         "notes": [
-            ("My Hokage", "2023-02-04 14:15"),
-            ("Nandebayor", "2023-02-04 14:15"),
+            ("Emily is a fitness enthusiast and enjoys trying out new workout classes and exploring different hiking trails in her area.", "2023-02-04 14:15"),
+            ("Her favorite hobby is woodworking, and she has built several pieces of furniture for her home", "2023-02-04 14:15"),
         ],
     },
 ]
