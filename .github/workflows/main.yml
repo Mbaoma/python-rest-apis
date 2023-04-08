@@ -21,8 +21,10 @@ env:
   AZURE_WEBAPP_NAME: base-note  
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+        branches:  [ main ]
 
   workflow_dispatch:
 
