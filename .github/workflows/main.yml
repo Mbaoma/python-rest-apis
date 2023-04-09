@@ -1,4 +1,4 @@
-name: Run tests, update Docker image and deploy to Azure App service
+name: Deploy the container to Docker Hub
 
 on:
   push:

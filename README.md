@@ -31,71 +31,55 @@ Provides access to a collection of people and to the individuals within that col
 - In the  CI pipeline, unless all [tests](https://testdriven.io/blog/flask-pytest/) run successfully, you cannot merge code into the main branch.
 **Resources**: [Test Routes](https://dev.to/po5i/how-to-add-basic-unit-test-to-a-python-flask-app-using-pytest-1m7a)
 
-<!-- - Setup a Virtual machine and install [GitHub](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-20-04#setting-up-git).
-
-- In the Azure CLI, create a service principal
-```bash
-$ az ad sp create-for-rbac --name "<name>" --role contributor --scopes <path to resource group> --sdk-auth 
-```
-
-Upon running the above command, a JSON response will be generated. Add this response to your GitHub secrets with the name ```AZURE_CREDENTIALS```.
-
-- This [article](https://www.rosehosting.com/blog/how-to-deploy-flask-application-with-nginx-and-gunicorn-on-ubuntu-20-04/) provides a guide for  hosting this application on Nginx.
-
-- Read [me](https://stackoverflow.com/questions/29679963/why-gunicorn-command-not-found-with-gunicorn-installed) fix gunicorn issues. -->
-
 ## Local setup
 - Activate virtual environment and install dependencies
 ```bash
-$ cd Part_1
-$ source virtualenv/bin/activate
-$ pip install requirements.txt
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 ```
 
 - Run project
 ```bash
-$ python main.py
-```
-
-- Run tests
-```bash
-$ pytest tests
+$ python run.py
 ```
 
 - Dockerizing the Application
 ```bash
 $ docker image build -t <image-name> .
+$ docker push <repo>/<image-name> 
 $ docker run -p port:port -d <image-name>
 ```
 
 - To pull the container from Dockerhub
 ```bash
-$ docker pull note_app
+$ docker pull mbaoma/note-app
 $ docker run -p port:port -d <image-name>
 ```
 
-Failing Build -> cannot merge into main
-<img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520306-81c5f381-27f2-4569-a198-a6dce7ff8c3b.png">
-
-Passing Build -> can merge into main
-<img width="915" alt="image" src="https://user-images.githubusercontent.com/49791498/210520789-e4d6931c-6506-4d98-92cd-3e98efd6838b.png">
-
-### Routes
-- ```GET /api/people```
-- ```GET /api/ui```
-- ```GET /api/home```
-- ```POST /api/person```
-- ```DELETE /api/person```
-
 ### Deploying the Application to Azure App Service
-- [Guide](https://learn.microsoft.com/en-us/azure/app-service/deploy-ci-cd-custom-container?tabs=acr&pivots=container-linux)
-<!-- - [GitHub Actions Guide](https://learn.microsoft.com/en-us/azure/app-service/deploy-container-github-action?tabs=publish-profile)
-- [Azure App Service Guide](https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal) -->
 
-- Deployed application
-<image>
+#### Manual Deployment
+- Push your container to [Azure Registry](https://learn.microsoft.com/en-us/azure/app-service/tutorial-custom-container?tabs=azure-portal&pivots=container-linux)
 
-**The CI/CD pipeline is triggered on every pull request made to the main branch**.
+- Create a web app under the Azure app services panel.
 
-<!-- <img width="1258" alt="image" src="https://user-images.githubusercontent.com/49791498/213863870-d04a9bbe-9169-428a-a61a-8431dd048d11.png"> -->
+<img width="1157" alt="image" src="https://user-images.githubusercontent.com/49791498/230750952-23d617c4-b1d6-4597-a5ea-5e8f94c5aff0.png">
+
+- Select what container registry your container is hosted in
+
+<img width="1158" alt="image" src="https://user-images.githubusercontent.com/49791498/230754141-76389ddc-50fb-4b84-85b9-f497f7b98020.png">
+
+- Create the web app and wait a while before checking the logs, to  determine the state of your container.
+
+- Navigate to your app's URL to view the eployed application
+
+<img width="1313" alt="image" src="https://user-images.githubusercontent.com/49791498/230754405-4cd12ea1-5371-4999-87c3-d7085eeac522.png">
+
+-- ```/api/ui (swagger UI)```
+<img width="1313" alt="image" src="https://user-images.githubusercontent.com/49791498/230754246-5e796a2a-3254-4987-806d-16710c54447a.png"> 
+
+
+
+
 
