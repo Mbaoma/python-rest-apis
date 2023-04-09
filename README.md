@@ -80,11 +80,6 @@ $ docker run -p port:port -d <image-name>
 <img width="1313" alt="image" src="https://user-images.githubusercontent.com/49791498/230754246-5e796a2a-3254-4987-806d-16710c54447a.png"> 
 
 
-#### Automated Deployment
-**The CI/CD pipeline is triggered on every pull request made to the main branch automatically updating the image**.
-
-- Deployed application
-<image>
 
 
 
