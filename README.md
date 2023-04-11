@@ -74,9 +74,11 @@ $ docker run -p port:port -d <image-name>
 
 - Navigate to your app's URL to view the eployed application
 
+https://brandnew7.azurewebsites.net/
 <img width="1313" alt="image" src="https://user-images.githubusercontent.com/49791498/230754405-4cd12ea1-5371-4999-87c3-d7085eeac522.png">
 
 -- ```/api/ui (swagger UI)```
+https://brandnew7.azurewebsites.net/api/ui/
 <img width="1313" alt="image" src="https://user-images.githubusercontent.com/49791498/230754246-5e796a2a-3254-4987-806d-16710c54447a.png"> 
 
 
