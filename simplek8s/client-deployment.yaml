@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: note-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web   
+    spec:
+      containers:
+        - name: client
+          # image: mbaoma/vote-app
+          image:  mbaoma/note-app
+          # image: stephengrider/multi-client
+          ports: 
+            - containerPort: 8080

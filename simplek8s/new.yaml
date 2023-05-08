@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: new
+  template:
+    metadata:
+      labels:
+        component: new 
+    spec:
+      containers:
+        - name: client
+          image: mbaoma/cloud-school-image
+          # image: mbaoma/vote-app
+          # image:  mbaoma/note-app
+          # image: stephengrider/multi-client
+          ports: 
+            - containerPort: 5000

@@ -81,7 +81,31 @@ https://brandnew7.azurewebsites.net/
 https://brandnew7.azurewebsites.net/api/ui/
 <img width="1313" alt="image" src="https://user-images.githubusercontent.com/49791498/230754246-5e796a2a-3254-4987-806d-16710c54447a.png"> 
 
+### Kubernetes config
+You need to have minikube running
+```bash
+$ minikube start
+```
 
+OR
+- Enable kubernetes on your Docker Desktop before running the next couple of commands.
 
+- Feed the config files to kubectl
+```bash
+$ kubectl apply -f simplek8s/file-name.yaml
+$ kubectl apply -f simplek8s/file-name.yaml
+```
 
+- Print the status of all running pods and services
+```bash
+$ kubectl get pods
+$ kubectl get services
+```
+
+- Navigate to 
+### Helpful commands
+```bash
+$ minikube service <service-name> --url
+$ kubectl describe svc <service-name>
+```
 
