@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: note-pod 
+  labels:  
+    component: web
+spec: 
+  containers:
+    - name: client
+      image: mbaoma/note-app
+      ports: 
+        - containerPort: 8080
+
+
+
