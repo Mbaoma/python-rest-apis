@@ -63,9 +63,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Convert repository name to lowercase
-        id: lowercase-repo-name
-        run: echo "::set-output name=repo_name::${{ github.repository_name | lower }}"
+      # - id: lowercase-repo-name
+      #   run: echo "::set-output name=repo_name::$(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')"
       
       - name: Build image using GlueOps
         uses: glueops/build-image@v0.1.0
