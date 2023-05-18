@@ -49,7 +49,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
+          tags: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
