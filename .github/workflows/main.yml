@@ -12,7 +12,7 @@ jobs:
         run: echo "::set-output name=repo_name::$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')"
 
       - name: Build image using GlueOps
-        uses: Mbaoma/build@v1.0
+        uses: Mbaoma/build-image@v1.0
         # uses: glueops/build-image@v0.1.0
         with:
           image-name: test-custom-workflow
