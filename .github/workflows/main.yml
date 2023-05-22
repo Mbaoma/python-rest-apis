@@ -13,6 +13,7 @@ jobs:
     
         - name: Build image using GlueOps
           uses: Mbaoma/build-image@v1.0
+          
             # uses: glueops/build-image@v0.1.0
           with:
             image-name: test-custom-workflow
