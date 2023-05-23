@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build image using custom action
+      - name: Build and Push Docker Image
         uses: Mbaoma/build-image@v2.0
         with:
           image-name: python-rest-apis
@@ -16,8 +16,9 @@ jobs:
           registry: ghcr.io
           registry-username: ${{ github.actor }}
           registry-password: ${{ secrets.GITHUB_TOKEN }}
-          # tags: ${{ github.sha }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tags: |
+            latest
+            ${{ github.sha }}
 
        
         # uses: glueops/build-image@v0.1.0
