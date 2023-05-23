@@ -10,16 +10,26 @@ jobs:
 
       - name: Build image using custom action
         uses: Mbaoma/build-image@v2.0
-       
-        # uses: glueops/build-image@v0.1.0
+
         with:
-          dockerfile-path: ../Dockerfile
-          image-name: ${{ github.repository }}  # it will be lowercased internally
+          image-name: ${{ github.repository }}
+          dockerfile-path: '../Dockerfile'
           registry: ghcr.io
           registry-username: ${{ github.actor }}
+          tags: v2.0
           registry-password: ${{ secrets.GITHUB_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
+
+       
+        # uses: glueops/build-image@v0.1.0
+        # with:
+        #   dockerfile-path: ../Dockerfile
+        #   image-name: ${{ github.repository }}  # it will be lowercased internally
+        #   registry: ghcr.io
+        #   registry-username: ${{ github.actor }}
+        #   registry-password: ${{ secrets.GITHUB_TOKEN }}
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        #   tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
 
 
 
