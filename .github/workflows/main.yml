@@ -13,7 +13,7 @@ jobs:
 
         with:
           image-name: ${{ github.repository }}
-          dockerfile-path: '../Dockerfile'
+          dockerfile-path: 'Dockerfile'
           registry: ghcr.io
           registry-username: ${{ github.actor }}
           registry-password: ${{ secrets.GITHUB_TOKEN }}
