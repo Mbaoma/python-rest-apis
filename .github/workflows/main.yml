@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image using custom action
-        uses: Mbaoma/build-image@v1.0
+        uses: Mbaoma/build-image
        
         # uses: glueops/build-image@v0.1.0
         with:
