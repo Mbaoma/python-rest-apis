@@ -11,11 +11,12 @@ jobs:
       - name: Build and Push Docker Image
         uses: Mbaoma/build-image@v2.0
         with:
-          image-name: python-rest-apis
+          image-name: ${{ github.repository }} 
           dockerfile-path: 'Dockerfile'
           registry: ghcr.io
           registry-username: ${{ github.actor }}
           registry-password: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           tags: |
             latest
             ${{ github.sha }}
