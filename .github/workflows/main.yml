@@ -10,15 +10,14 @@ jobs:
 
       - name: Build image using custom action
         uses: Mbaoma/build-image@v2.0
-
         with:
-          image-name: ${{ github.repository_owner }}/python-rest-apis
+          image-name: python-rest-apis
           dockerfile-path: 'Dockerfile'
           registry: ghcr.io
           registry-username: ${{ github.actor }}
           registry-password: ${{ secrets.GITHUB_TOKEN }}
+          # tags: ${{ github.sha }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          tags: ${{ github.sha }}
 
        
         # uses: glueops/build-image@v0.1.0
