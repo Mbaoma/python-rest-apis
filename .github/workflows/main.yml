@@ -1,29 +1,21 @@
-name: Deploy the container to Docker Hub
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+name: Publish Docker image
+ 
+on: [push]
 
 jobs:
-
-  build:
-
+  push_to_registry:
     runs-on: ubuntu-latest
-
     steps:
+      - uses: actions/checkout@v3
 
-    - uses: actions/checkout@v2
-    - name: docker login
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
-        
-    - name: Build the Docker image
-      uses: docker/build-push-action@v4
-      with:
-        push: true
-        tags: mbaoma/note-app:latest
+      - name: Build and Push Docker Image
+        # uses: macbre/push-to-ghcr@master
+        uses: Mbaoma/build-image@v2.5
+        with:
+          image_name: ${{ github.repository }} 
+          dockerfile-path: 'Dockerfile'
+          registry: ghcr.io
+          registry-username: ${{ github.actor }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tags: ${{ github.sha }}
+      
