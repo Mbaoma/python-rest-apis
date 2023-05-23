@@ -1,23 +1,28 @@
-# name: Deploy the container to Docker Hub
-#on:
-#   push:
-#     branches: [ "main" ]
-#   pull_request:
-#     branches: [ "main" ]
+name: Publish Docker image
+ 
+on: [push]
 
-# jobs:
-#   push_to_registry:
-#     runs-on: ubuntu-latest
-#     steps:
-#         - uses: actions/checkout@v2
+jobs:
+  push_to_registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-#         - name: Build image using GlueOps
-#           uses: Mbaoma/build-image@v1.0
-          
-#             # uses: glueops/build-image@v0.1.0
-#           with:
-#             image-name: test-custom-workflow
-#             registry: ghcr.io
-#             registry-username: ${{ github.actor }}
-#             registry-password: ${{ secrets.GITHUB_TOKEN }}
-#             tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
+      # - id: lowercase-repo-name
+      #   run: echo "::set-output name=repo_name::$(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')"
+      
+      - name: Build image using GlueOps
+        uses: Mbaoma/build-image@v1.0
+       
+        # uses: glueops/build-image@v0.1.0
+        with:
+          dockerfile-path: Dockerfile
+          image-name: ${{ github.repository }}  # it will be lowercased internally
+          registry: ghcr.io
+          registry-username: ${{ github.actor }}
+          registry-password: ${{ secrets.GITHUB_TOKEN }}
+          tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
+
+
+
+      
