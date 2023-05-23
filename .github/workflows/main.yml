@@ -1,27 +1,36 @@
-name: Publish Docker image
- 
 on: [push]
 
 jobs:
-  push_to_registry:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-        - uses: actions/checkout@v2
+      - name: Hello world action step
+        id: hello
+        uses: Mbaoma/cd-hello-world-docker-action@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
 
-        - name: Build image using GlueOps
-          uses: Mbaoma/build-image@v1.0
+# name: Publish Docker image
+ 
+# on: [push]
+
+# jobs:
+#   push_to_registry:
+#     runs-on: ubuntu-latest
+#     steps:
+#         - uses: actions/checkout@v2
+
+#         - name: Build image using GlueOps
+#           uses: Mbaoma/build-image@v1.0
           
-            # uses: glueops/build-image@v0.1.0
-          with:
-            image-name: test-custom-workflow
-            registry: ghcr.io
-            registry-username: ${{ github.actor }}
-            registry-password: ${{ secrets.GITHUB_TOKEN }}
-            tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
-    
-        # - name: Push image to registry
-        #   uses: docker/build-push-action@v2
-        #   with:
-        #         context: .
-        #         push: true
-        #         tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
+#             # uses: glueops/build-image@v0.1.0
+#           with:
+#             image-name: test-custom-workflow
+#             registry: ghcr.io
+#             registry-username: ${{ github.actor }}
+#             registry-password: ${{ secrets.GITHUB_TOKEN }}
+#             tags: ${{ github.repository_owner }}/${{ github.repository }}:${{ github.sha }}
