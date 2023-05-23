@@ -12,7 +12,7 @@ jobs:
         # uses: macbre/push-to-ghcr@master
         uses: Mbaoma/build-image@v2.0
         with:
-          image_name: ${{ github.repository }} 
+          image-name: ${{ github.repository }} 
           # dockerfile-path: 'Dockerfile'
           # registry: ghcr.io
           # registry-username: ${{ github.actor }}
