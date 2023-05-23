@@ -8,15 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - id: lowercase-repo-name
-      #   run: echo "::set-output name=repo_name::$(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')"
-      
-      - name: Build image using GlueOps
+      - name: Build image using custom action
         uses: Mbaoma/build-image@v1.0
        
         # uses: glueops/build-image@v0.1.0
         with:
-          dockerfile-path: Dockerfile
+          dockerfile-path: ../Dockerfile
           image-name: ${{ github.repository }}  # it will be lowercased internally
           registry: ghcr.io
           registry-username: ${{ github.actor }}
