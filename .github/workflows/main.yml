@@ -12,7 +12,7 @@ jobs:
         uses: Mbaoma/build-image@v2.0
 
         with:
-          image-name: ${{ github.repository }}
+          image-name: ${{ github.repository_owner }}/python-rest-apis
           dockerfile-path: 'Dockerfile'
           registry: ghcr.io
           registry-username: ${{ github.actor }}
