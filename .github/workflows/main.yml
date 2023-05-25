@@ -9,8 +9,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build and Push Docker Image
-        # uses: macbre/push-to-ghcr@master
-        uses: Mbaoma/build-image@v4.5
+        uses: Mbaoma/build-image@main
         with:
           image_name: ${{ github.repository }} 
           github_token: ${{ secrets.GITHUB_TOKEN }}
