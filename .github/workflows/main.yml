@@ -10,12 +10,7 @@ jobs:
 
       - name: Build and Push Docker Image
         # uses: macbre/push-to-ghcr@master
-        uses: Mbaoma/build-image@v2.5
+        uses: Mbaoma/build-image@v4.5
         with:
           image_name: ${{ github.repository }} 
-          dockerfile-path: 'Dockerfile'
-          registry: ghcr.io
-          registry-username: ${{ github.actor }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          tags: ${{ github.sha }}
-      
