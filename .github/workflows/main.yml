@@ -10,7 +10,7 @@ jobs:
 
       - name: Build and Push Docker Image
         # uses: macbre/push-to-ghcr@master
-        uses: Mbaoma/build-image@v3.1
+        uses: Mbaoma/build-image@v3.2
         with:
           image_name: ${{ github.repository }} 
           # dockerfile-path: 'Dockerfile'
