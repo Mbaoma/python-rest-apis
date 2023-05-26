@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build and Push Docker Image
-        uses: Mbaoma/build-image@v1.1
+        uses: Mbaoma/build-image@v1.2
         with:
           image_name: ${{ github.repository }} 
           github_token: ${{ secrets.GITHUB_TOKEN }}
